@@ -1,0 +1,62 @@
+body {
+    background: linear-gradient(30deg, #e0ff51,#965ef5);
+}
+
+h1 {
+    text-align: center;
+}
+
+.pasCol {
+    color: red;
+    font-style: italic;
+}
+.ourForm {
+position: relative;
+width: 450px;
+height: 350px;
+border-radius: 20px;
+padding: 25px;
+box-sizing: border-box;
+background: rgb(228, 250, 215);
+box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+label, input, button {
+display: block;
+width: 90%;
+padding: 0;
+outline: none;
+box-sizing: border-box;
+}
+
+
+label {
+margin-bottom: 4px;
+}
+input {
+background: #ecf0f3;
+padding: 10px;
+padding-left: 20px;
+height: 20px;
+font-size: 14px;
+border-radius: 50px;
+
+}
+button {
+color: white;
+margin-top: 20px;
+background: #6c25be;
+height: 40px;
+border-radius: 20px;
+}
+
+.checking {
+    width: 25px;
+    height: 25px;
+}
+
+form {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

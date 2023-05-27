@@ -1,0 +1,32 @@
+<?php
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        
+        $birthDate = $_POST['birthdate'];
+        $fullName = $_POST['firstName'] . $_POST['lastName'];
+        $phoneNumber = $_POST['phone'];
+        $photo = $_POST['photo'];
+
+        $conn = mysqli_connect("localhost", "root", "", "test_db");
+
+        if (mysqli_connect_errno()) {
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+            exit();
+        }
+
+        $result = mysqli_query($conn, "SELECT * FROM users ORDER BY ID DESC LIMIT 1");
+
+        $row = $result->fetch_assoc();
+          
+        $name = $row['Name'];
+        $password = $row['Password'];
+
+        mysqli_query($conn, "UPDATE users SET BirthDate = '$birthDate', PhoneNumber = '$phoneNumber', FullName = '$fullName', Photo = '$photo' WHERE Name = '$name' and Password = '$password'");
+
+        mysqli_close($conn);
+    }
+
+    header("Location: /PHP - RAUF/TeamX/user-info2/user-info2.php");
+    exit;
+
+?>
